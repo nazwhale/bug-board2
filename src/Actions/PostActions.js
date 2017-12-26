@@ -12,10 +12,10 @@ export function getPosts() {
   }
 }
 
-export function savePosts() {
-
+export function savePost(post) {
+  return dispatch => database.push(post)
 }
 
-export function deletePosts() {
-
+export function deletePost(id) {
+  return dispatch => database.child(id).remove();
 }
