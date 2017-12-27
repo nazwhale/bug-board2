@@ -14,7 +14,6 @@ class App extends Component {
     return (
       <input type="text" placeholder={`Enter a ${field.label}...`}{...field.input} />
     )
-
   }
 
   onSubmit(values) {
@@ -25,13 +24,13 @@ class App extends Component {
     return _.map(this.props.posts, (post, key) => {
       return (
         <div className="card post post-item" key={key}>
-          <div className="card block content">
+          <div className="card block">
             <h3 className="card-title">{post.title}</h3>
-            <p className="card-text">{post.body}</p>
-            <button onClick={() => {
+            <a className="card-text">{post.body}</a>
+            <button className="btn btn-danger" onClick={() => {
               this.props.deletePost(key);
             }}>
-              Delete
+              X
             </button>
           </div>
         </div>

@@ -8,6 +8,10 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.content {
+.block {
+  display: inline-block;
   padding: 20px;
+}
+.btn {
+  float: right;
 }
