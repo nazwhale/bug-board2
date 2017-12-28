@@ -19,6 +19,9 @@ body {
 .btn-done {
   background-color: #2bc78a;
 }
+.btn-incomplete {
+  background-color: #d5d8d9;
+}
 .search-bar {
   margin-top: 20px;
   margin-bottom: 20px;

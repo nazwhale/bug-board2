@@ -19,15 +19,20 @@ class App extends Component {
   }
 
   onSubmit(values) {
-    this.props.savePost(values)
+    values.completed = false;
+    this.props.savePost(values);
   }
 
-  changeStatus(key) {
-    if (false) {
+  changeStatus(post, key) {
+    if (!post.completed) {
       this.props.setCompleted(key);
     } else {
       this.props.setIncomplete(key);
     };
+  }
+
+  setDoneColor(post) {
+    return post.completed ? "btn btn-done" : "btn btn-incomplete";
   }
 
   renderPosts() {
@@ -37,10 +42,10 @@ class App extends Component {
           <div className="card block">
             <h3 className="card-title">{post.title}</h3>
             <a className="card-text">{post.body}</a>
-            <button className="btn btn-done" onClick={() => {
-              this.changeStatus(key);
+            <button className={this.setDoneColor(post)} onClick={() => {
+              this.changeStatus(post, key);
             }}>
-              Done?
+              Done
             </button>
             <button className="btn btn-danger" onClick={() => {
               this.props.deletePost(key);
