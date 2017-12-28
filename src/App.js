@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   changeStatus(key) {
-    if (false) {           // check current state of button
+    if (false) {
       this.props.setCompleted(key);
     } else {
       this.props.setIncomplete(key);
@@ -38,7 +38,7 @@ class App extends Component {
             <h3 className="card-title">{post.title}</h3>
             <a className="card-text">{post.body}</a>
             <button className="btn btn-done" onClick={() => {
-                this.changeStatus(key);
+              this.changeStatus(key);
             }}>
               Done?
             </button>
