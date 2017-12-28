@@ -5,6 +5,7 @@ import { Field, reduxForm, reset } from 'redux-form';
 import _ from 'lodash';
 import { getPosts, savePost, deletePost } from './Actions/PostActions';
 import './Styles/App.css'
+import SearchBar from './Containers/SearchBar';
 
 class App extends Component {
   componentWillMount() {
@@ -60,6 +61,7 @@ class App extends Component {
             <button type="submit">Post</button>
           </form>
         </div>
+        <SearchBar />
         <div className="main">
           { this.renderPosts() }
         </div>
@@ -79,7 +81,5 @@ function mapStateToProps({ posts }) {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ getPosts, savePost, deletePost }, dispatch);
 }
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(form);
