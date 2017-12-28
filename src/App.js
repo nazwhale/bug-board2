@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Field, reduxForm, reset } from 'redux-form';
 import _ from 'lodash';
 import { getPosts, savePost, deletePost } from './Actions/PostActions';
@@ -71,8 +72,14 @@ let form = reduxForm({
   form: 'NewPost'
 })(App);
 
-form = connect(state => ({
-  posts: state.posts
-}), { getPosts, savePost, deletePost })(form);
+function mapStateToProps({ posts }) {
+  return { posts };
+}
 
-export default form;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ getPosts, savePost, deletePost }, dispatch);
+}
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(form);
