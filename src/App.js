@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, reduxForm, reset } from 'redux-form';
 import _ from 'lodash';
-import { getPosts, savePost, deletePost } from './Actions/PostActions';
+import { getPosts, savePost, deletePost, setCompleted, setIncomplete } from './Actions/PostActions';
 import './Styles/App.css'
 import SearchBar from './Containers/SearchBar';
 
@@ -22,6 +22,14 @@ class App extends Component {
     this.props.savePost(values)
   }
 
+  changeStatus(key) {
+    if (false) {           // check current state of button
+      this.props.setCompleted(key);
+    } else {
+      this.props.setIncomplete(key);
+    };
+  }
+
   renderPosts() {
     return _.map(this.props.posts, (post, key) => {
       return (
@@ -29,6 +37,11 @@ class App extends Component {
           <div className="card block">
             <h3 className="card-title">{post.title}</h3>
             <a className="card-text">{post.body}</a>
+            <button className="btn btn-done" onClick={() => {
+                this.changeStatus(key);
+            }}>
+              Done?
+            </button>
             <button className="btn btn-danger" onClick={() => {
               this.props.deletePost(key);
             }}>
@@ -79,7 +92,7 @@ function mapStateToProps({ posts }) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getPosts, savePost, deletePost }, dispatch);
+  return bindActionCreators({ getPosts, savePost, deletePost, setCompleted, setIncomplete }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(form);

@@ -19,3 +19,15 @@ export function savePost(post) {
 export function deletePost(id) {
   return dispatch => database.child(id).remove();
 }
+
+export function setCompleted(id) {
+  var updates = {};
+    updates[id + '/completed/'] = true;
+  return dispatch => database.update(updates);
+}
+
+export function setIncomplete(id) {
+  var updates = {};
+    updates[id + '/completed/'] = false;
+  return dispatch => database.update(updates);
+}
