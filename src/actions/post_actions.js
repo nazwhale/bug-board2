@@ -1,4 +1,4 @@
-import { database } from '../Firebase';
+import { database } from '../firebase';
 export const FETCH_POSTS = 'FETCH_POSTS';
 
 export function getPosts() {

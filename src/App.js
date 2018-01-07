@@ -4,9 +4,9 @@ import { bindActionCreators } from 'redux';
 import { Field, reduxForm, reset } from 'redux-form';
 import Modal from 'react-modal';
 import _ from 'lodash';
-import { getPosts, savePost, deletePost, setCompleted, setIncomplete, upvote } from './Actions/PostActions';
-import './Styles/App.css'
-import SearchBar from './Containers/SearchBar';
+import { getPosts, savePost, deletePost, setCompleted, setIncomplete, upvote } from './actions/post_actions';
+import './styles/app.css'
+import SearchBar from './containers/search_bar';
 
 const modalStyle = {
   overlay : {

@@ -1,4 +1,4 @@
-import { FETCH_POSTS } from '../Actions/PostActions';
+import { FETCH_POSTS } from '../actions/post_actions';
 
 export default function (state={}, action) {
   switch(action.type) {

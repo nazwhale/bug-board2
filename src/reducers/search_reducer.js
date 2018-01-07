@@ -1,4 +1,4 @@
-import { GET_SEARCH } from '../Actions/SearchActions';
+import { GET_SEARCH } from '../actions/search_actions';
 
 export default function (state="", action) {
   switch(action.type) {
