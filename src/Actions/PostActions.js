@@ -28,7 +28,7 @@ export function setCompleted(id) {
 
 export function setIncomplete(id) {
   var updates = {};
-    updates[id + '/completed/'] = true;
+    updates[id + '/completed/'] = false;
   return dispatch => database.update(updates);
 }
 

@@ -42,10 +42,6 @@ class App extends Component {
     this.state = { modalOpen : false, modalKey: undefined, modalVotes: undefined }
   }
 
-  componentDidUpdate() {
-    console.log(this.state.modalOpen)
-  }
-
   componentWillMount() {
     this.props.getPosts();
   }
@@ -82,8 +78,15 @@ class App extends Component {
     return post.completed ? 'btn btn-done' : 'btn btn-incomplete';
   }
 
+  // filterSearchResults(searchTerm) {
+  //   _.map(this.props.posts, (post) => {
+  //     if
+  //   })
+  // }
+
   renderPosts() {
-    console.log(this.props.searchTerm);
+    console.log(this.props.searchTerm)
+
     return _.map(this.props.posts, (post, key) => {
       return (
         // extract into card container
@@ -144,6 +147,8 @@ class App extends Component {
         </div>
 
         <SearchBar />
+
+
         <div className='main'>
           { this.renderPosts() }
         </div>
