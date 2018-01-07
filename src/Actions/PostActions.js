@@ -28,6 +28,13 @@ export function setCompleted(id) {
 
 export function setIncomplete(id) {
   var updates = {};
-    updates[id + '/completed/'] = false;
+    updates[id + '/completed/'] = true;
+  return dispatch => database.update(updates);
+}
+
+export function upvote(id, currentVotes) {
+  var updates = {};
+    var newVotes = currentVotes + 1
+    updates[id + '/votes/'] = newVotes;
   return dispatch => database.update(updates);
 }

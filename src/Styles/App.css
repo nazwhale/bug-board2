@@ -19,6 +19,9 @@ body {
 .btn-done {
   background-color: #2bc78a;
 }
+.btn-upvote {
+  background-color: skyblue;
+}
 .btn-incomplete {
   background-color: #d5d8d9;
 }
