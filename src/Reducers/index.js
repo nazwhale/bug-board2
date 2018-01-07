@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import PostReducer from './PostReducer';
+import postReducer from './PostReducer';
+import searchReducer from './SearchReducer';
 
 const rootReducer = combineReducers({
   form: formReducer,
-  posts: PostReducer
+  posts: postReducer,
+  searchTerm: searchReducer
 });
 
 export default rootReducer;
