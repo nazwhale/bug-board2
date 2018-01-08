@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import '../styles/app.css'
+import '../styles/bounce.css'
 import Modal from 'react-modal';
 import { setCompleted, setIncomplete, deletePost, upvote } from '../actions/post_actions';
 
@@ -11,7 +12,7 @@ const modalStyle = {
     top               : 300,
     left              : 500,
     right             : 500,
-    bottom            : 100,
+    bottom            : 300,
     backgroundColor   : 'transparent',
     zIndex            : 99
   },
@@ -87,13 +88,15 @@ class Card extends Component {
 
         </div>
 
-        <Modal isOpen={ this.state.modalOpen } style={ modalStyle } >
-          <h1>Upvote?</h1>
-          <p>Enter UserID here</p>
+        <Modal
+        isOpen={ this.state.modalOpen }
+        style={ modalStyle }
+        className="animation-target">
+          <h5>Upvote?</h5>
           <button className='btn btn-upvote' onClick={() => {
             this.closeModal();
           }}>
-          close
+            Close
           </button>
 
          <button className='btn btn-upvote' onClick={() => {
