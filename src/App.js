@@ -34,7 +34,6 @@ class App extends Component {
 
   renderPosts() {
     console.log(this.props.searchTerm)
-
     return _.map(this.props.posts, (post, key) => {
       return (
         <div>
@@ -72,7 +71,6 @@ class App extends Component {
         <div className='main'>
           { this.renderPosts() }
         </div>
-
       </div>
     );
   }

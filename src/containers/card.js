@@ -58,7 +58,6 @@ class Card extends Component {
   }
 
   render() {
-
     return (
       <div className='card post post-item' key={ this.props.post.key }>
         <div className='card block'>
@@ -103,9 +102,7 @@ class Card extends Component {
           }}>
            Confirm
          </button>
-
         </Modal>
-
       </div>
     );
   }
